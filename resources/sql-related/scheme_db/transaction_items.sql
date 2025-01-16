@@ -1,0 +1,10 @@
+CREATE TABLE TRANSACTION_ITEMS (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    transaction_id INT NOT NULL,
+    tour_id INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    quantity INT NOT NULL,
+    FOREIGN KEY (transaction_id) REFERENCES TRANSACTIONS(transaction_id) ON DELETE CASCADE,
+    FOREIGN KEY (tour_id) REFERENCES TOURS(tour_id) ON DELETE CASCADE
+);
+
