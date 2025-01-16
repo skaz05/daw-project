@@ -46,7 +46,12 @@ document.addEventListener('DOMContentLoaded', () => {
     closePopup.addEventListener('click', () => {
         cartPopup.style.display = 'none';
     });
-
+    // inchidere popup cart daca dau click in afara ferestrei
+    window.addEventListener('click', (event) => {
+        if (event.target === cartPopup) {
+            cartPopup.style.display = 'none';
+        }
+    });
     // functie ajax pt fetch cart din db
     function fetchCartItems() {
         fetch('includes/cart_data.php')

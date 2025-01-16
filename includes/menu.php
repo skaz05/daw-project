@@ -18,7 +18,9 @@
     </ul>
 </nav>
 
-<?php if ($_SESSION['role'] === "admin"): ?>
-    <!-- <li><a href="admin.php">Admin Panel</a></li> -->
-    <p>Role: <?= htmlspecialchars($_SESSION['role']); ?></p>
+<?php if (isset($_SESSION['user_id'])): ?>
+    <?php if ($_SESSION['role'] === "admin"): ?>
+        <!-- <li><a href="admin.php">Admin Panel</a></li> -->
+        <p>Role: <?= htmlspecialchars($_SESSION['role']); ?></p>
+    <?php endif; ?>
 <?php endif; ?>
